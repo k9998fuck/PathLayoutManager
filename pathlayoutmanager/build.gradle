@@ -2,11 +2,11 @@ apply plugin: 'com.android.library'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'com.github.dcendents.android-maven'
 
-def siteUrl = 'https://github.com/wuyr/PathLayoutManager' //需要修改
-def gitUrl = 'https://github.com/Ifxcyr/PathLayoutManager.git' //需要修改
+def siteUrl = 'https://github.com/k9998fuck/PathLayoutManager' //需要修改
+def gitUrl = 'https://github.com/k9998fuck/PathLayoutManager.git' //需要修改
 
 version = "1.0.3"
-group = "com.wuyr"
+group = "com.k9998"
 
 android {
     compileSdkVersion 27
@@ -32,15 +32,15 @@ dependencies {
 Properties properties = new Properties()
 properties.load(project.rootProject.file('local.properties').newDataInputStream())
 bintray {
-    user = properties.getProperty("bintray.user")
-    key = properties.getProperty("bintray.apikey")
+    user = 'k9998'
+    key = '51ed0fa893e520bfa5ba46ed16c1bef136010fad'
     pkg {
-        repo = 'PathLayoutManager' //需要修改
+        repo = 'jrepo' //需要修改
         name = 'PathLayoutManager' //需要修改
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ['Apache-2.0']
-        userOrg = 'wuyr'
+        userOrg = 'k9998'
         publish = true
 
         version {

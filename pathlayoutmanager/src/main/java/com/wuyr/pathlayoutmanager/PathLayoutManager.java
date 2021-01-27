@@ -533,9 +533,9 @@ public class PathLayoutManager extends RecyclerView.LayoutManager implements Rec
                     mOffsetX = itemLength;
                 }
             } else {
-                int overflowLength = itemLength - pathLength;
-                if (mOffsetX < 0) {
-                    mOffsetX = 0;
+                int overflowLength = itemLength - pathLength + 2*mItemOffset;
+                if (mOffsetX < 0-2*mItemOffset) {
+                    mOffsetX = 0-2*mItemOffset;
                 } else if (mOffsetX > overflowLength) {
                     if (itemLength > pathLength) {
                         mOffsetX = overflowLength;
