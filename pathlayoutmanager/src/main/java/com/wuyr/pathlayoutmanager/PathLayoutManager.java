@@ -706,7 +706,18 @@ public class PathLayoutManager extends RecyclerView.LayoutManager implements Rec
                 break;
             case RecyclerView.SCROLL_STATE_IDLE:
                 if (isAutoSelect) {
-                    smoothScrollToPosition(findClosestPosition());
+                    int closestPosition = findClosestPosition();
+                    if(closestPosition==-1){
+                        int itemCount = getItemCount();
+                        if(itemCount>0){
+                            if(getDistance(itemCount)<getDistance(0)){
+                                closestPosition = itemCount;
+                            }else{
+                                closestPosition = 0;
+                            }
+                        }
+                    }
+                    smoothScrollToPosition(closestPosition);
                 }
                 break;
             default:
